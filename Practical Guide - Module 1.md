@@ -197,6 +197,44 @@ Checkpoint:
 - Rule: If your prompt starts with `root@...:/#`, you are in Linux container.
 - Rule: If your prompt starts with `PS C:\Users\...`, you are in Windows PowerShell.
 
+## Troubleshooting: If Docker Desktop Fails to Start
+Common issues for Windows users are often related to system settings called virtualization.
+
+### Problem A: Hardware assisted virtualization must be enabled in the BIOS
+If you see this error, your computer's CPU supports virtualization but the feature is currently turned off.
+
+Check status:
+1. Press `Ctrl + Shift + Esc` to open Task Manager.
+2. Click the **Performance** tab, then click **CPU**.
+3. Look for **Virtualization** at the bottom-right.
+4. If it says **Disabled**, continue to BIOS steps below.
+
+Enter BIOS:
+1. Restart your computer.
+2. During startup, repeatedly tap `F2`, `F10`, or `Del` (key depends on your laptop brand).
+
+Enable virtualization:
+1. Look for a menu called **Advanced**, **Configuration**, or **Security**.
+2. If you have an Intel processor, enable **Intel Virtualization Technology (VT-x)**.
+3. If you have an AMD processor, enable **SVM Mode**.
+
+Save and exit:
+1. Press `F10` to save changes and restart.
+2. Open Docker Desktop again.
+
+### Problem B: WSL 2 installation is incomplete
+Open Windows PowerShell as Administrator (Right-click Start, then choose Windows Terminal/PowerShell Admin).
+
+Run:
+
+```bash
+wsl --update
+```
+
+After update completes:
+1. Restart Docker Desktop.
+2. If needed, reboot Windows once and try again.
+
 ## Completion Checklist
 - Docker Desktop installed and running.
 - Linux sandbox created successfully.
