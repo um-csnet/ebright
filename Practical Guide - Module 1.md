@@ -171,6 +171,90 @@ dir
 Checkpoint:
 - You can see both `id_rsa` and `id_rsa.pub` in the file list.
 
+## Lab 5 (Optional): Enable SSH in the Docker Sandbox
+Yes, SSH can be enabled in Docker for practice. This is useful for training, but not required for normal Docker workflows.
+
+Important notes:
+- For day-to-day container management, `docker exec` is usually preferred over SSH.
+- This lab is for learning remote access flow in a safe local sandbox.
+
+### Task 5.1: Recreate Container with SSH Port Mapping
+SSH needs port mapping from Windows to container.
+
+In Windows PowerShell, run:
+
+```bash
+docker rm -f ebright-practice
+docker run -it --name ebright-practice -p 2222:22 ubuntu bash
+```
+
+Why this matters:
+- `-p 2222:22` maps Windows port `2222` to container SSH port `22`.
+
+### Task 5.2: Install and Start SSH Server in Container
+Inside the Linux container prompt, run:
+
+```bash
+apt update
+apt install -y openssh-server
+mkdir -p /run/sshd
+useradd -m -s /bin/bash trainee
+echo "trainee:ebright123!" | chpasswd
+sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+/usr/sbin/sshd
+```
+
+Checkpoint:
+- Run `ss -tulpen | grep :22` and confirm SSH is listening on port 22.
+
+### Task 5.3: Test SSH Login from Windows
+Open a new Windows PowerShell window and run:
+
+```bash
+ssh trainee@localhost -p 2222
+```
+
+When prompted:
+1. Type `yes` to trust the host key.
+2. Enter password: `ebright123!`
+
+Verification:
+- If login succeeds, your prompt changes to something like `trainee@<container-id>:$`.
+
+### Task 5.4: Optional Key-Based SSH Login (Recommended)
+In Windows PowerShell, copy your public key text:
+
+```bash
+type $HOME\.ssh\id_rsa.pub
+```
+
+Copy that full single line.
+
+In the SSH session as `trainee`, run:
+
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+nano ~/.ssh/authorized_keys
+```
+
+Paste the copied public key into `authorized_keys`, then save and exit.
+
+Finish permissions:
+
+```bash
+chmod 600 ~/.ssh/authorized_keys
+```
+
+Now test key login from a new Windows PowerShell:
+
+```bash
+ssh trainee@localhost -p 2222
+```
+
+If your key is loaded and recognized, login should work without password prompt.
+
 ## Lab Summary and Cleanup
 - To exit the Sandbox: `exit`
 - To restart the Sandbox later: `docker start -ai ebright-practice`
@@ -196,6 +280,10 @@ Checkpoint:
 5. Confusion between Windows and Linux terminals.
 - Rule: If your prompt starts with `root@...:/#`, you are in Linux container.
 - Rule: If your prompt starts with `PS C:\Users\...`, you are in Windows PowerShell.
+
+6. SSH connection refused on `localhost:2222`.
+- Cause: Container was started without `-p 2222:22`, or `sshd` is not running.
+- Fix: Recreate container with `-p 2222:22`, then start SSH server with `/usr/sbin/sshd`.
 
 ## Troubleshooting: If Docker Desktop Fails to Start
 Common issues for Windows users are often related to system settings called virtualization.
