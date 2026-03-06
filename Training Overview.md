@@ -12,35 +12,23 @@ The Pillar 1 session is designed to break the reliance on graphical interfaces a
 
 #### Module 1: Introduction, Fundamentals & Remote Access
 
-The Linux Ecosystem: Transitioning to "Headless" operation, the power of the CLI over GUI, and the long-term stability of Ubuntu Server LTS.
-
-Cloud Computing & VPS: Moving from managed hosting to IaaS, understanding the Shared Responsibility Model, and leveraging Root Access on isolated virtual servers.
-
-System Fundamentals: Exploring the architecture of the Linux Kernel, the Bash Shell interpreter, and the hierarchy of operation between the user and hardware.
-
-The Sandbox: Comparing Docker Containers vs. Virtual Machines (VM) for high-performance, non-destructive practice.
-
-Remote Access Theory: Securing connections via SSH using Asymmetric Encryption (Keys) and the technical handshake process.
-
-The Server Mindset: Essential operational rules-Case Sensitivity, Sudo (administrative) usage, and the "no feedback is success" principle.
+- Linux Ecosystem: Transitioning to "headless" operation, the power of CLI over GUI, and the long-term stability of Ubuntu Server LTS.
+- Cloud Computing and VPS: Moving from managed hosting to IaaS, understanding the shared responsibility model, and leveraging root access on isolated virtual servers.
+- System Fundamentals: Exploring Linux kernel architecture, the Bash shell interpreter, and the hierarchy between user commands and hardware execution.
+- The Sandbox: Comparing Docker containers and virtual machines (VM) for high-performance, non-destructive practice.
+- Remote Access Theory: Securing connections via SSH using asymmetric encryption (keys) and understanding the authentication handshake process.
+- The Server Mindset: Applying essential operational rules such as case sensitivity, proper `sudo` usage, and the "no feedback means success" principle.
 
 #### Module 2: Mastering the Filesystem, Users & Permissions
 
-The Filesystem Hierarchy (FHS): Understanding the Linux tree structure and the specific roles of core system and data directories.
-
-Help, Documentation & Information: Mastering self-documentation tools and system/identity identification (`uname`, `hostname`, `whoami`).
-
-Filesystem Operations: Mastering navigation, file/directory creation, and advanced manipulation (copying, moving, and safe deletion).
-
-Content Exploration & Text Editing: Viewing file data, utilizing terminal-based text editors (`nano`/`vi`), and managing archiving/compression.
-
-Security Logic (Users & Permissions): Provisioning accounts, managing departmental groups, octal permission logic, and granting `sudo` privileges.
-
-Terminal Productivity & Task Scheduling: Using command history, efficiency shortcuts, I/O redirection/piping, and automation via `crontab`.
-
-Storage, Time & Software Management: Monitoring disk health, managing system time/timezones, and installing software via `apt`.
-
-Process & Network Operations: Real-time process monitoring, connectivity troubleshooting, remote transfers, and safe power operations (`reboot`/`shutdown`).
+- Filesystem Hierarchy (FHS): Understanding the Linux tree structure and the roles of core system and data directories.
+- Help, Documentation, and Information: Using self-documentation tools and confirming system identity (`uname`, `hostname`, `whoami`).
+- Filesystem Operations: Practicing navigation, file and directory creation, and safe manipulation (copy, move, delete).
+- Content Exploration and Text Editing: Inspecting file content, using terminal editors (`nano` and `vi`), and handling archive and compression workflows.
+- Security Logic (Users and Permissions): Provisioning accounts, managing departmental groups, applying octal permission logic, and granting `sudo` privileges.
+- Terminal Productivity and Task Scheduling: Using command history, efficiency shortcuts, piping and redirection, and automation with `crontab`.
+- Storage, Time, and Software Management: Monitoring disk health, managing time/timezones, and installing software using `apt`.
+- Process and Network Operations: Monitoring processes in real time, troubleshooting connectivity, handling remote transfers, and using safe power operations (`reboot` and `shutdown`).
 
 ## Pillar 2: Deployment, Security & Continuity
 
@@ -52,23 +40,15 @@ The 2d session transitions from system-level administration to application-level
 
 #### Module 3: Deployment, Security & Continuity
 
-System Snapshots: Performing server-wide snapshots as a primary restore point before configuration changes.
-
-System Diagnostics: Monitoring system vital signs using `df -h` (Disk), `free -m` (Memory), and `top` (Processes).
-
-Log Management: Troubleshooting application errors via real-time log analysis using `tail -f`.
-
-Software Stack: Managing application packages; installing Nginx and PostgreSQL via the `apt` package manager.
-
-Version Control: Utilizing Git for deployment; cloning repositories and updating production code with `git pull`.
-
-Network Identity: Managing DNS records (A, CNAME, MX) to facilitate proper domain routing.
-
-Perimeter Hardening: Configuring the UFW Firewall to restrict network access to essential web traffic.
-
-Data Protection: Establishing automated backup protocols and distinguishing between snapshots and off-site storage.
-
-Operational Readiness: Implementing emergency recovery procedures, system power operations (`reboot`, `shutdown`), and internal escalation workflows.
+- System Snapshots: Performing server-wide snapshots as a primary restore point before configuration changes.
+- System Diagnostics: Monitoring system vitals with `df -h` (disk), `free -m` (memory), and `top` (processes).
+- Log Management: Troubleshooting application errors through real-time log analysis with `tail -f`.
+- Software Stack: Managing application packages and installing Nginx and PostgreSQL via `apt`.
+- Version Control: Using Git for deployment, including cloning repositories and updating production code with `git pull`.
+- Network Identity: Managing DNS records (A, CNAME, MX) to support correct domain routing.
+- Perimeter Hardening: Configuring UFW firewall rules to limit network access to essential web traffic.
+- Data Protection: Establishing automated backup protocols and understanding snapshots versus off-site storage.
+- Operational Readiness: Applying emergency recovery procedures, safe power operations (`reboot`, `shutdown`), and internal escalation workflows.
 
 ## Learning Outcome
 
