@@ -8,6 +8,8 @@ This document defines the two core pillars of the 1-day Linux Server Maintenance
 - Module 1 Practical: [Practical Guide - Module 1](Practical%20Guide%20-%20Module%201.md)
 - Module 2 Lecture: [Lecture Guide - Module 2](Lecture%20Guide%20-%20Module%202.md)
 - Module 2 Practical: [Practical Guide - Module 2](Practical%20Guide%20-%20Module%202.md)
+- Module 3 Lecture: [Lecture Guide - Module 3](Lecture%20Guide%20-%20Module%203.md)
+- Module 3 Practical: [Practical Guide - Module 3](Practical%20Guide%20-%20Module%203.md)
 
 ## Pillar 1: System Identity, Access & Administration
 
@@ -59,11 +61,15 @@ The 2nd session transitions from system-level administration to application-leve
 - System Diagnostics: Monitoring system vitals with `df -h` (disk), `free -m` (memory), and `top` (processes).
 - Log Management: Troubleshooting application errors through real-time log analysis with `tail -f`.
 - Software Stack: Managing application packages and installing Nginx and PostgreSQL via `apt`.
-- Version Control: Using Git for deployment, including cloning repositories and updating production code with `git pull`.
+- Deployment Workflows: Using Git branch-based deployment (`clone`, `status`, `pull`) and Docker image-based deployment (`build`, `push`, `pull`, `run`) for production-safe release flows.
 - Network Identity: Managing DNS records (A, CNAME, MX) to support correct domain routing.
 - Perimeter Hardening: Configuring UFW firewall rules to limit network access to essential web traffic.
 - Data Protection: Establishing automated backup protocols and understanding snapshots versus off-site storage.
 - Operational Readiness: Applying emergency recovery procedures, safe power operations (`reboot`, `shutdown`), and internal escalation workflows.
+
+Module 3 lab assets:
+- Compose stack and Nginx config: `asset/module3/`
+- Docker image deployment sample: `asset/module3/deploy/`
 
 ## Learning Outcome
 

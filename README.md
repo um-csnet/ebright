@@ -19,6 +19,8 @@ Full detailed overview: [Training Overview](Training%20Overview.md)
 ## Module 3 Lab Assets
 - Docker Compose stack files for the extra lab are in `asset/module3/`.
 - Main compose file: `asset/module3/docker-compose.yml`.
+- Docker image deployment sample files are in `asset/module3/deploy/`.
+- Sample app Dockerfile: `asset/module3/deploy/Dockerfile`.
 
 ## First 2 Minutes Setup (VS Code)
 1. Open Visual Studio Code.
@@ -51,7 +53,7 @@ Expected:
 ### Pillar 2: Deployment, Security & Continuity
 - Focus: Application delivery, monitoring, and system stability.
 - Objective: Transition from system administration to application operations, including deployment workflows, system diagnostics, firewall hardening, backup planning, and recovery readiness.
-- Coverage: Snapshots, package management, Git-based deployment, DNS identity, UFW firewall setup, and continuity procedures.
+- Coverage: Snapshots, package management, Git and Docker deployment workflows, DNS identity, UFW firewall setup, and continuity procedures.
 
 ## Learning Outcome
 By the end of the day, the Ebright IT team transitions from passive managed-host users to active cloud infrastructure administrators with practical survival skills to keep services stable, secure, and accessible.
@@ -60,7 +62,7 @@ General objectives:
 - Build confidence using Linux CLI commands for daily server administration tasks.
 - Apply secure access and identity practices, including SSH key usage and role-based permissions.
 - Perform structured filesystem and user/group management aligned with departmental operations.
-- Execute basic deployment and update workflows using package management and Git.
+- Execute basic deployment and update workflows using package management, Git, and Docker.
 - Monitor system health, interpret core diagnostics, and respond to common operational incidents.
 - Implement continuity controls through snapshots, backups, firewall hardening, and recovery readiness.
 
@@ -88,8 +90,8 @@ Ebright IT & Administration Team
 
 | Time | Session Type | Module | Key Focus |
 | --- | --- | --- | --- |
-| 14:00 - 15:00 | Lecture | [Module 3: Deployment, Security & Continuity](Lecture%20Guide%20-%20Module%203.md) | Snapshots, package management (Apt), Git workflows, and DNS records. |
-| 15:00 - 16:15 | Practical | [Module 3: Deployment, Security & Continuity](Practical%20Guide%20-%20Module%203.md) | Live lab: Nginx/Git deployment, Firewall (UFW) setup, and Snapshot Recovery. |
+| 14:00 - 15:00 | Lecture | [Module 3: Deployment, Security & Continuity](Lecture%20Guide%20-%20Module%203.md) | Snapshots, package management (Apt), Git and Docker workflows, and DNS records. |
+| 15:00 - 16:15 | Practical | [Module 3: Deployment, Security & Continuity](Practical%20Guide%20-%20Module%203.md) | Live lab: Nginx deployment (Git/Docker), Firewall (UFW) setup, and Snapshot Recovery. |
 | 16:15 - 17:00 | Review | Final | Q&A, Emergency Escalation Protocols, and "Survival" Cheat Sheet distribution. |
 
 ## Session Breakdown Summary
