@@ -15,6 +15,7 @@ Full detailed overview: [Training Overview](Training%20Overview.md)
 - [Practical Guide - Module 2](Practical%20Guide%20-%20Module%202.md)
 - [Lecture Guide - Module 3](Lecture%20Guide%20-%20Module%203.md)
 - [Practical Guide - Module 3](Practical%20Guide%20-%20Module%203.md)
+- [Linux Commands Cheat Sheet](Linux%20Commands%20Cheat%20Sheet.md)
 
 ## Asset
 
