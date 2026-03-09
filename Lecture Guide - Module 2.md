@@ -44,7 +44,13 @@ Fast pre-flight commands for trainer:
 
 ```bash
 whoami
+```
+
+```bash
 pwd
+```
+
+```bash
 ip a | head -n 10
 ```
 
@@ -108,11 +114,29 @@ Before making changes, identify your environment and account context.
 
 ```bash
 uname -a
+```
+
+```bash
 lsb_release -a
+```
+
+```bash
 hostname
+```
+
+```bash
 whoami
+```
+
+```bash
 man ls
+```
+
+```bash
 ls --help | head -n 10
+```
+
+```bash
 whatis grep
 ```
 
@@ -159,9 +183,21 @@ CLI deletions are permanent. There is no recycle bin by default.
 
 ```bash
 mkdir -p /opt/ebright-lab/module2/{finance,hr,academic}
+```
+
+```bash
 touch /opt/ebright-lab/module2/finance/budget-2026.txt
+```
+
+```bash
 cp /opt/ebright-lab/module2/finance/budget-2026.txt /opt/ebright-lab/module2/hr/
+```
+
+```bash
 mv /opt/ebright-lab/module2/hr/budget-2026.txt /opt/ebright-lab/module2/hr/payroll-draft.txt
+```
+
+```bash
 ls -R /opt/ebright-lab/module2
 ```
 
@@ -204,14 +240,41 @@ Archiving bundles files for transport and backup; compression reduces storage us
 
 ```bash
 mkdir -p /opt/ebright-lab/module2/content
+```
+
+```bash
 echo "Portal check OK" > /opt/ebright-lab/module2/content/status.log
+```
+
+```bash
 echo "ERROR: timeout" >> /opt/ebright-lab/module2/content/status.log
+```
+
+```bash
 cat /opt/ebright-lab/module2/content/status.log
+```
+
+```bash
 grep ERROR /opt/ebright-lab/module2/content/status.log
+```
+
+```bash
 tar -cvf /opt/ebright-lab/module2/content.tar /opt/ebright-lab/module2/content
+```
+
+```bash
 gzip /opt/ebright-lab/module2/content.tar
+```
+
+```bash
 ls -lh /opt/ebright-lab/module2/content.tar.gz
+```
+
+```bash
 gunzip /opt/ebright-lab/module2/content.tar.gz
+```
+
+```bash
 tar -xvf /opt/ebright-lab/module2/content.tar -C /opt/ebright-lab/module2
 ```
 
@@ -259,12 +322,33 @@ Use administrative access only for trusted staff.
 
 ```bash
 sudo groupadd registrar
+```
+
+```bash
 sudo useradd -m lina_registrar
+```
+
+```bash
 sudo usermod -aG registrar lina_registrar
+```
+
+```bash
 sudo mkdir -p /opt/ebright-lab/module2/registrar
+```
+
+```bash
 sudo chown root:registrar /opt/ebright-lab/module2/registrar
+```
+
+```bash
 sudo chmod 770 /opt/ebright-lab/module2/registrar
+```
+
+```bash
 id lina_registrar
+```
+
+```bash
 ls -ld /opt/ebright-lab/module2/registrar
 ```
 
@@ -309,9 +393,21 @@ Professional administrators move fast and automate repetitive work.
 
 ```bash
 history | tail -n 10
+```
+
+```bash
 echo "disk snapshot" | tee /tmp/ops-note.txt
+```
+
+```bash
 df -h | tee -a /tmp/ops-note.txt
+```
+
+```bash
 cat /tmp/ops-note.txt
+```
+
+```bash
 crontab -l
 ```
 
@@ -350,10 +446,25 @@ Servers require routine maintenance to remain healthy, accurate, and secure.
 
 ```bash
 df -h
+```
+
+```bash
 du -sh /var/log
+```
+
+```bash
 date
+```
+
+```bash
 timedatectl
+```
+
+```bash
 sudo apt update
+```
+
+```bash
 sudo apt list --upgradable
 ```
 
@@ -397,11 +508,29 @@ This final section covers runtime visibility and connectivity checks that are cr
 
 ```bash
 ps aux | head -n 5
+```
+
+```bash
 top -b -n 1 | head -n 12
+```
+
+```bash
 ip a
+```
+
+```bash
 ping -c 4 8.8.8.8
+```
+
+```bash
 nslookup ubuntu.com
+```
+
+```bash
 ss -tuln | head -n 10
+```
+
+```bash
 ssh -V
 ```
 
@@ -421,7 +550,13 @@ Facilitator prompts:
 
 ```bash
 sudo groupadd ebright_staff
+```
+
+```bash
 sudo useradd -m -G ebright_staff sarah_tutor
+```
+
+```bash
 sudo useradd -m -G ebright_staff hafiz_admin
 ```
 
@@ -429,8 +564,17 @@ sudo useradd -m -G ebright_staff hafiz_admin
 
 ```bash
 sudo mkdir -p /opt/ebright/shared
+```
+
+```bash
 sudo chown root:ebright_staff /opt/ebright/shared
+```
+
+```bash
 sudo chmod 770 /opt/ebright/shared
+```
+
+```bash
 ls -ld /opt/ebright/shared
 ```
 
@@ -438,6 +582,9 @@ ls -ld /opt/ebright/shared
 
 ```bash
 id sarah_tutor
+```
+
+```bash
 id hafiz_admin
 ```
 
