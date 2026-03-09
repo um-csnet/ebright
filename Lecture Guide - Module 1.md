@@ -61,7 +61,13 @@ Run and explain:
 
 ```bash
 uname -a
+```
+
+```bash
 uptime
+```
+
+```bash
 free -h
 ```
 
@@ -116,11 +122,29 @@ This topic introduces the execution pipeline of Linux systems: user intent, shel
 
 ```bash
 pwd
+```
+
+```bash
 ls -la
+```
+
+```bash
 mkdir -p lab/module1
+```
+
+```bash
 cd lab/module1
+```
+
+```bash
 touch notes.txt
+```
+
+```bash
 echo "Module 1 practice" > notes.txt
+```
+
+```bash
 cat notes.txt
 ```
 
@@ -149,10 +173,25 @@ This topic clarifies where to practice safely and how to choose the right isolat
 
 ```bash
 docker compose -f asset/module1/docker-compose.yml up -d --build
+```
+
+```bash
 docker compose -f asset/module1/docker-compose.yml ps
+```
+
+```bash
 docker exec -it ebright-practice-ssh bash
+```
+
+```bash
 cat /etc/os-release
+```
+
+```bash
 exit
+```
+
+```bash
 docker compose -f asset/module1/docker-compose.yml down
 ```
 
@@ -190,7 +229,13 @@ This topic covers the security baseline for operating remote servers. Learners a
 
 ```bash
 ssh-keygen -t ed25519 -C "ebright-admin"
+```
+
+```bash
 ls -la ~/.ssh
+```
+
+```bash
 ssh user@SERVER_IP
 ```
 
@@ -223,7 +268,13 @@ This topic focuses on operational discipline. It prepares learners to think care
 
 ```bash
 whoami
+```
+
+```bash
 hostnamectl
+```
+
+```bash
 ip a
 ```
 
@@ -231,7 +282,13 @@ ip a
 
 ```bash
 uptime
+```
+
+```bash
 sudo apt update
+```
+
+```bash
 sudo apt list --upgradable
 ```
 
@@ -239,6 +296,9 @@ sudo apt list --upgradable
 
 ```bash
 ls -la ~/.ssh
+```
+
+```bash
 sudo ss -tulpen | grep :22
 ```
 

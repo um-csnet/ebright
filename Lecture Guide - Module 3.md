@@ -55,7 +55,13 @@ Fast pre-flight commands for trainer:
 
 ```bash
 whoami
+```
+
+```bash
 hostnamectl
+```
+
+```bash
 sudo systemctl status nginx --no-pager
 ```
 
@@ -116,8 +122,17 @@ A stable application depends on three critical resources: disk, memory, and CPU.
 
 ```bash
 df -h
+```
+
+```bash
 free -m
+```
+
+```bash
 uptime
+```
+
+```bash
 top
 ```
 
@@ -170,6 +185,9 @@ In a second terminal:
 
 ```bash
 sudo grep -i "error" /var/log/nginx/error.log | tail -n 20
+```
+
+```bash
 sudo grep -i "failed" /var/log/auth.log | tail -n 20
 ```
 
@@ -210,10 +228,25 @@ Use this exact sequence for config updates:
 
 ```bash
 sudo apt update
+```
+
+```bash
 sudo apt install -y nginx
+```
+
+```bash
 sudo nginx -t
+```
+
+```bash
 sudo systemctl status nginx --no-pager
+```
+
+```bash
 sudo systemctl reload nginx
+```
+
+```bash
 sudo systemctl enable nginx
 ```
 
@@ -244,10 +277,25 @@ Quick collaboration note (branching):
 
 ```bash
 cd /var/www
+```
+
+```bash
 sudo git clone [URL] html
+```
+
+```bash
 cd /var/www/html
+```
+
+```bash
 git status
+```
+
+```bash
 git log --oneline -n 5
+```
+
+```bash
 git pull
 ```
 
@@ -284,14 +332,35 @@ Use the same training image naming convention as the practical:
 
 ```bash
 # Developer side
+```
+
+```bash
 cd asset/module3/deploy
+```
+
+```bash
 docker build -t docker.io/ebright-training/module3-portal:latest .
+```
+
+```bash
 docker login
+```
+
+```bash
 docker push docker.io/ebright-training/module3-portal:latest
 
 # Server side
+```
+
+```bash
 docker pull docker.io/ebright-training/module3-portal:latest
+```
+
+```bash
 docker run -d --name ebright-portal -p 8888:80 docker.io/ebright-training/module3-portal:latest
+```
+
+```bash
 curl -I http://localhost:8888
 ```
 
@@ -304,11 +373,23 @@ If registry access is restricted, transfer the image tarball manually:
 
 ```bash
 # Developer side
+```
+
+```bash
 docker save -o module3-portal-latest.tar docker.io/ebright-training/module3-portal:latest
+```
+
+```bash
 scp module3-portal-latest.tar user@SERVER_IP:/tmp/
 
 # Server side
+```
+
+```bash
 docker load -i /tmp/module3-portal-latest.tar
+```
+
+```bash
 docker run -d --name ebright-portal -p 8888:80 docker.io/ebright-training/module3-portal:latest
 ```
 
@@ -340,6 +421,9 @@ Use these checks to verify DNS behavior after changes:
 
 ```bash
 dig portal.ebright.edu.my +short
+```
+
+```bash
 nslookup portal.ebright.edu.my
 ```
 
@@ -364,11 +448,29 @@ A default server can expose unnecessary ports. Firewall policy should follow lea
 
 ```bash
 sudo ufw allow 22
+```
+
+```bash
 sudo ufw allow 80
+```
+
+```bash
 sudo ufw allow 443
+```
+
+```bash
 sudo ufw default deny incoming
+```
+
+```bash
 sudo ufw default allow outgoing
+```
+
+```bash
 sudo ufw enable
+```
+
+```bash
 sudo ufw status numbered
 ```
 
@@ -404,6 +506,9 @@ Operational caution:
 
 ```bash
 sudo shutdown -h +5 "Scheduled Maintenance"
+```
+
+```bash
 sudo shutdown -c
 ```
 
