@@ -188,10 +188,10 @@ Checkpoint:
 ## Lab 4: Content Exploration & Text Editing
 Edit files and inspect data like a real administrator.
 
-### Task 4.1: View Message of the Day
+### Task 4.1: Read Hostname File
 
 ```bash
-cat /etc/motd
+cat /etc/hostname
 ```
 
 ### Task 4.2: Read Last 5 Lines of a Log
